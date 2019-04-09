@@ -58,10 +58,15 @@ function bonusCalc( employee ) {
     newEmployeeObject.bonusPercentage = 0.06;
   } else {
     newEmployeeObject.bonusPercentage = 0.1;
-  }
+  } // end 1%
+  // Additional 5% for employees over 15 years
   if ( employee.employeeNumber.length === 4 && employee.reviewRating > 2 ) {
     newEmployeeObject.bonusPercentage += 0.05;
-  }
+  } // end Additional 5%
+  // Employees over $65K adjusted down 1%
+  if ( employee.annualSalary > 65000 && employee.reviewRating > 2 ){
+    newEmployeeObject.bonusPercentage -= 0.01;
+  } // end employees over $65K
   return newEmployeeObject;
 } // end bonusCalc
 
