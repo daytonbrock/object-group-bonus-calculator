@@ -59,6 +59,9 @@ function bonusCalc( employee ) {
   } else {
     newEmployeeObject.bonusPercentage = 0.1;
   }
+  if ( employee.employeeNumber.length === 4 && employee.reviewRating > 2 ) {
+    newEmployeeObject.bonusPercentage += 0.05;
+  }
   return newEmployeeObject;
 } // end bonusCalc
 
