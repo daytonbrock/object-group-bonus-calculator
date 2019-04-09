@@ -67,6 +67,13 @@ function bonusCalc( employee ) {
   if ( employee.annualSalary > 65000 && employee.reviewRating > 2 ){
     newEmployeeObject.bonusPercentage -= 0.01;
   } // end employees over $65K
+  // lower anyone with a bonus about 13% to 13%
+  if ( newEmployeeObject.bonusPercentage > 0.13 ){
+    newEmployeeObject.bonusPercentage = 0.13;
+  } else if ( newEmployeeObject.bonusPercentage < 0 ){
+    newEmployeeObject.bonusPercentage = 0;
+  } // end limiters
+
   return newEmployeeObject;
 } // end bonusCalc
 
