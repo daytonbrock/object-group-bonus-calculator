@@ -44,5 +44,17 @@ const employees = [
 console.log( employees );
 
 function bonusCalc( employee ) {
-  
+    console.log('in bonusCalc');
+    
+  if ( employee.reviewRating <= 2 ){
+    return 'no bonus';
+    
+  }
+
 } // end bonusCalc
+
+console.log( bonusCalc( employees[0] ) );
+console.log( bonusCalc( employees[1] ) );
+console.log( bonusCalc( employees[2] ) );
+console.log( bonusCalc( employees[3] ) );
+console.log( bonusCalc( employees[4] ) );
