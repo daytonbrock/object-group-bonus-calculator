@@ -74,6 +74,10 @@ function bonusCalc( employee ) {
     newEmployeeObject.bonusPercentage = 0;
   } // end limiters
 
+  employee.annualSalary = parseInt(employee.annualSalary);
+  newEmployeeObject.totalBonus = employee.annualSalary * newEmployeeObject.bonusPercentage;
+  newEmployeeObject.totalCompensation = employee.annualSalary + newEmployeeObject.totalBonus;
+
   return newEmployeeObject;
 } // end bonusCalc
 
