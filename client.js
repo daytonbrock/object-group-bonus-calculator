@@ -45,12 +45,21 @@ console.log( employees );
 
 function bonusCalc( employee ) {
     console.log('in bonusCalc');
-    
-  if ( employee.reviewRating <= 2 ){
-    return 'no bonus';
-    
+    // create a new object to return at end of function
+  let newEmployeeObject = {
+    name: employee.name
   }
-
+    // check employee .reviewRating, give newEmployeeObject appropriate bonus rating
+  if ( employee.reviewRating <= 2 ){
+    newEmployeeObject.bonusPercentage = 0;
+  } else if ( employee.reviewRating === 3 ){
+    newEmployeeObject.bonusPercentage = 0.04;
+  } else if ( employee.reviewRating === 4 ){
+    newEmployeeObject.bonusPercentage = 0.06;
+  } else {
+    newEmployeeObject.bonusPercentage = 0.1;
+  }
+  return newEmployeeObject;
 } // end bonusCalc
 
 console.log( bonusCalc( employees[0] ) );
